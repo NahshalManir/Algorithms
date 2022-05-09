@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1635389093 source:c:\users\nahshal\documents\pca-1\insertion_sort\main.c
+	<stdio.h>
+	<stdlib.h>
+

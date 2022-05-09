@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1631976901 source:c:\users\nahshal\documents\cs-391\binarytree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Queue.h"
+
+1631976771 c:\users\nahshal\documents\cs-391\binarytree\queue.h
+
+1634620842 source:c:\users\nahshal\documents\binarytree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Queue.h"
+	"Stack.h"
+
+1631976771 c:\users\nahshal\documents\binarytree\queue.h
+
+1632199231 c:\users\nahshal\documents\binarytree\stack.h
+

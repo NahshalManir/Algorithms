@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1633702429 source:c:\users\nahshal\documents\cs-391\8_queen\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

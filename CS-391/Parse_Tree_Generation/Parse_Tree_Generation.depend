@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1639583558 source:c:\users\nahshal\documents\cs-391\parse_tree_generation\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

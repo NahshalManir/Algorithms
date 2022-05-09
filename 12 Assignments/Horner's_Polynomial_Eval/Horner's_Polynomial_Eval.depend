@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1637389212 source:c:\users\nahshal\documents\12 assignments\horner's_polynomial_eval\main.c
+	<stdio.h>
+	<stdlib.h>
+

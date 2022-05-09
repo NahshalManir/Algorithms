@@ -1,0 +1,3 @@
+Name  = Nahshal
+Age  = 0
+Salary  = 0.00

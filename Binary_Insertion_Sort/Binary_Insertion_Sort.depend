@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1634397995 source:c:\users\nahshal\documents\binary_insertion_sort\main.c
+	<stdio.h>
+	<stdlib.h>
+

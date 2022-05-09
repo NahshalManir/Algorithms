@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1642224261 source:c:\users\nahshal\documents\cs-391\final_lab_bfs\main.c
+	<stdio.h>
+	<stdlib.h>
+

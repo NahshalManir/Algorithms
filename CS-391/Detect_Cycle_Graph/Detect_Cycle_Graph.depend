@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1640587098 source:c:\users\nahshal\documents\cs-391\detect_cycle_graph\main.c
+	<stdio.h>
+	<stdlib.h>
+

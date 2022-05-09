@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1636388665 source:c:\users\nahshal\documents\karatsuba_multiplication\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

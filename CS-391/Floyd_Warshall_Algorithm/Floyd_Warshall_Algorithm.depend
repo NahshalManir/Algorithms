@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1641876072 source:c:\users\nahshal\documents\cs-391\floyd_warshall_algorithm\main.c
+	<stdio.h>
+	<stdlib.h>
+

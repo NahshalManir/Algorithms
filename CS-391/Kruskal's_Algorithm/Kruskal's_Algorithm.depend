@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1640693224 source:c:\users\nahshal\documents\cs-391\kruskal's_algorithm\main.c
+	<stdio.h>
+	<stdlib.h>
+

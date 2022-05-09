@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1641893033 source:c:\users\nahshal\documents\longest_common_substring\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

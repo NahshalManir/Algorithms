@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1632388610 source:c:\users\nahshal\documents\queuearray\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -45,17 +45,16 @@ int is_safe (Board B, int x, int y)
     return 1;
 }
 
-void n_queen(Board *B, int k, int n, int *a_sol_no)
-{
+void n_queen(Board *B, int k, int n, int *a_sol_no) {
     int j;
-    for(j=1;j<=n;j++)
-        if(is_safe(*B,k,j))
-        {
-            B->C[k]=j;
-            if(k==n)
-                display_Board(*B,n,a_sol_no);
+
+    for(j = 1; j <= n; j++)
+        if(is_safe(*B, k, j)) {
+            B->C[k] = j;
+            if(k == n)
+                display_Board(*B, n, a_sol_no);
             else
-                n_queen(B,k+1,n,a_sol_no);
+                n_queen(B, k+1, n, a_sol_no);
         }
 }
 

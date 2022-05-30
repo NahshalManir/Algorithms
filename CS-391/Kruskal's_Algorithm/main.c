@@ -87,7 +87,7 @@ void Kruskal(GRAPH G)
     G.wt[a][b]=G.wt[b][a]=INFINITE;
     }
 
-    printf("\nMinimum cost = %d\n", mincost);
+    printf("\nTotal cost of Minimum Spanning Tree = %d\n", mincost);
 }
 
 int main()

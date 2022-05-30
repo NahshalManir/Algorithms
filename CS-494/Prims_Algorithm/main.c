@@ -30,6 +30,9 @@ int main() {
   // set number of edge to 0
   no_edge = 0;
 
+  // To store total cost of minimum spanning tree
+  int min_cost = 0;
+
   // the number of egde in minimum spanning tree will be
   // always less than (V -1), where V is number of vertices in
   //graph
@@ -53,23 +56,23 @@ int main() {
     x = 0;
     y = 0;
 
-    for (int i = 0; i < V; i++) {
-      if (selected[i]) {
-        for (int j = 0; j < V; j++) {
-          if (!selected[j] && G[i][j]) {  // not in selected and there is an edge
+    for (int i = 0; i < V; i++)
+      if (selected[i])
+        for (int j = 0; j < V; j++)
+          if (!selected[j] && G[i][j])  // not in selected and there is an edge
             if (min > G[i][j]) {
               min = G[i][j];
               x = i;
               y = j;
             }
-          }
-        }
-      }
-    }
+
+    min_cost += G[x][y];
     printf("%d - %d : %d\n", x, y, G[x][y]);
     selected[y] = true;
     no_edge++;
   }
+
+  printf("\nTotal cost of Minimum Spanning Tree: %d\n", min_cost);
 
   return 0;
 }

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1625813522 source:c:\users\nahshal\documents\distinctletters\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-

@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1625024384 source:c:\users\nahshal\documents\test\main.cpp
-	<climits>
-	<iostream>
-	<vector>
-	<cmath>
-	<stdlib.h>
-	<string>
-

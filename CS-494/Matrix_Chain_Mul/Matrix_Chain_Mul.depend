@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1648230008 source:c:\users\nahshal\documents\cs-494\matrix_chain_mul\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-

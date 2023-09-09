@@ -1,21 +1,23 @@
 #ifndef Stack_h
 #define Stack_h
 
+typedef struct Node Node;
+
 struct Stack
 {
     int size;
     int top;
-    struct Node **S;
+    Node **S;
 };
 
 void Stackcreate(struct Stack *st, int size)
 {
     st->size=size;
     st->top=-1;
-    st->S=(struct Node**)malloc(st->size*sizeof(struct Node *));
+    st->S=(Node**)malloc(st->size*sizeof(Node *));
 }
 
-void push(struct Stack *st, struct Node *x)
+void push(struct Stack *st, Node *x)
 {
     if(st->top==st->size-1)
         printf("Stack overflow \n");
@@ -26,14 +28,26 @@ void push(struct Stack *st, struct Node *x)
     }
 }
 
-struct Node *pop(struct Stack *st)
+Node *pop(struct Stack *st)
 {
-    struct Node *x=NULL;
+    Node *x=NULL;
 
     if(st->top==-1)
         printf("Stack Underflow \n");
     else
         x=st->S[st->top--];
+
+    return x;
+};
+
+Node *peek(struct Stack st)
+{
+    Node *x=NULL;
+
+    if(st.top==-1)
+        printf("Stack Underflow \n");
+    else
+        x=st.S[st.top];
 
     return x;
 };
@@ -48,6 +62,10 @@ int isEmptyStack(struct Stack st)
 int isFullStack(struct Stack st)
 {
     return st.top==st.size-1;
+}
+
+void deleteStack(struct Stack *st) {
+    free(st->S);
 }
 
 #endif // Stack_h

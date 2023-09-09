@@ -1,12 +1,10 @@
 #ifndef Queue_h
 #define Queue_h
 
-typedef struct Node
-{
-    struct Node *lchild;
-    int data;
-    struct Node *rchild;
-}Node;
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node Node;
 
 struct Queue
 {

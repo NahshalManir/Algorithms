@@ -3,18 +3,24 @@
 #include "Queue.h"
 #include "Stack.h"
 
-struct Node *root=NULL;
-
-void Treecreate()
+typedef struct Node
 {
-    struct Node *p,*t;
+    struct Node *lchild;
+    int data;
+    struct Node *rchild;
+} Node;
+
+Node *root = NULL;
+
+void Treecreate() {
+    Node *p,*t;
     int x;
     struct Queue q;
     create(&q,100);
 
     printf("Enter root value: ");
     scanf("%d",&x);
-    root=(struct Node *)malloc(sizeof(struct Node));
+    root=(Node *)malloc(sizeof(Node));
     root->data=x;
     root->lchild=root->rchild=NULL;
     enqueue(&q,root);
@@ -26,7 +32,7 @@ void Treecreate()
         scanf("%d",&x);
         if(x!=-1)
         {
-            t=(struct Node *)malloc(sizeof(struct Node));
+            t=(Node *)malloc(sizeof(Node));
             t->data=x;
             t->lchild=t->rchild=NULL;
             p->lchild=t;
@@ -36,7 +42,7 @@ void Treecreate()
         scanf("%d",&x);
         if(x!=-1)
         {
-            t=(struct Node *)malloc(sizeof(struct Node));
+            t=(Node *)malloc(sizeof(Node));
             t->data=x;
             t->lchild=t->rchild=NULL;
             p->rchild=t;
@@ -47,7 +53,7 @@ void Treecreate()
 
 }
 
-void Preorder(struct Node *p)
+void Preorder(Node *p)
 {
     if(p)
     {
@@ -58,7 +64,7 @@ void Preorder(struct Node *p)
     }
 }
 
-void Inorder(struct Node *p)
+void Inorder(Node *p)
 {
     if(p)
     {
@@ -69,7 +75,7 @@ void Inorder(struct Node *p)
     }
 }
 
-void Postorder(struct Node *p)
+void Postorder(Node *p)
 {
     if(p)
     {
@@ -79,7 +85,7 @@ void Postorder(struct Node *p)
     }
 }
 
-void IPreorder(struct Node *p)
+void IPreorder(Node *p)
 {
     struct Stack stk;
     Stackcreate(&stk,100);
@@ -100,7 +106,7 @@ void IPreorder(struct Node *p)
     }
 }
 
-void IInorder(struct Node *p)
+void IInorder(Node *p)
 {
     struct Stack stk;
     Stackcreate(&stk,100);
@@ -121,7 +127,87 @@ void IInorder(struct Node *p)
     }
 }
 
-int count(struct Node *root)
+void IPostorder(Node *p) {
+    if(p==NULL) {
+        printf("Empty Tree \n");
+        return;
+    }
+
+    struct Stack stk;
+    Stackcreate(&stk,100);
+
+    do
+    {
+        while(p!=NULL)
+        {
+            if(p->rchild!=NULL)
+                push(&stk, p->rchild);
+            push(&stk, p);
+            p=p->lchild;
+        }
+
+        p=pop(&stk);
+        if(p->rchild!=NULL && isEmptyStack(stk) != 1 && p->rchild==peek(stk))
+        {
+            pop(&stk);
+            push(&stk, p);
+            p=p->rchild;
+        }
+        else
+        {
+            printf("%d ",p->data);
+            p=NULL;
+        }
+    }while(isEmptyStack(stk));
+
+    deleteStack(&stk);
+}
+
+void MorrisPreorder(Node *p) {
+    while(p != NULL) {
+        if(!p->lchild) {
+            printf("%d ", p->data);
+            p = p->rchild;
+        } else {
+            Node *temp = p->lchild;
+            while(temp->rchild && temp->rchild != p) 
+                temp = temp->rchild;
+            if(temp->rchild == NULL) {
+                temp->rchild = p;
+                printf("%d ", p->data);
+                p = p->lchild;
+            } else {
+                temp->rchild = NULL;
+                p = p->rchild;
+            }
+        }
+    }
+    printf("\n");
+}
+
+void MorrisInorder(Node *p) {
+    while(p != NULL) {
+        if(!p->lchild) {
+            printf("%d ", p->data);
+            p = p->rchild;
+        } else {
+            Node *temp = p->lchild;
+            while(temp->rchild && temp->rchild != p) 
+                temp = temp->rchild;
+            if(temp->rchild == NULL) {
+                temp->rchild = p;
+                p = p->lchild;
+            } else {
+                temp->rchild = NULL;
+                printf("%d ", p->data);
+                p = p->rchild;
+            }
+        }
+    }
+    printf("\n");
+}
+
+int count(Node *root)
 {
     int x,y;
     if(root)
@@ -133,20 +219,16 @@ int count(struct Node *root)
     return 0;
 }
 
-int height(struct Node *root)
+int height(Node *root)
 {
-    int x=0,y=0;
     if(root==0)
         return 0;
-    x=height(root->lchild);
-    y=height(root->rchild);
-    if(x>y)
-        return x+1;
-    else
-        return y+1;
+    int x=height(root->lchild);
+    int y=height(root->rchild);
+    return x > y ? x + 1 : y + 1;
 }
 
-void LevelOrder(struct Node *p)
+void LevelOrder(Node *p)
 {
     struct Queue q;
     create(&q,100);
@@ -177,7 +259,10 @@ int main()
     //Inorder(root);
     printf("Count: %d\n",count(root));
     printf("Height: %d\n",height(root));
-                LevelOrder(root);
+    LevelOrder(root);
+    // IPostorder(root);
+    MorrisInorder(root);
+    MorrisPreorder(root);
 
     return 0;
 }

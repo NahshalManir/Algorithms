@@ -50,7 +50,7 @@ void Recursive_Insert_Sorted(Linked_List **head, int val)
     }
     else
         Recursive_Insert_Sorted(&(*head)->next,val);
-
+        
 }
 
 void Insert_Serial(Linked_List **head, int val)
